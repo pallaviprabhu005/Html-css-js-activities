@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #222222;
+      --accent-color: #262bb6;
+    }
+
+    input[type="checkbox"]:checked ~ .content {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --accent-color: #bed3ec;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--accent-color);
+      color: white;
+      width: 100px;
+      height: 40px;
+      border-radius: 20px;
+      cursor: pointer;
+      position: relative;
+      padding: 5px;
+      transition: background-color 0.3s;
+    }
+
+    label::before {
+      position: absolute;
+      left: 10px;
+      font-size: 18px;
+    }
+
+    label::after {
+      position: absolute;
+      right: 10px;
+      font-size: 18px;
+    }
+
+    .slider {
+      background-color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      transition: transform 0.4s;
+    }
+
+    input[type="checkbox"]:checked + label .slider {
+      transform: translateX(60px);
+    }
+
+    input[type="checkbox"]:checked + label::before {
+      opacity: 0.5;
+    }
+    input[type="checkbox"]:checked + label::after {
+      opacity: 1;
+    }
+
+   
+
+  </style>
+</head>
+<body>
+
+  <input type="checkbox" id="theme-toggle">
+  <label for="theme-toggle">
+    <div class="slider"></div>
+  </label>
+
+  <div class="content">
+    <h1>Pure CSS Theme Toggle</h1>
+    
+  </div>
+
+</body>
+</html>

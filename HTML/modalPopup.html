@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Popup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #edbdc0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .open-btn {
+      background-color: #de2837;
+      color: white;
+      padding: 20px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .close-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 16px;
+      background-color: #e74c3c;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    #modal:target {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#modal" class="open-btn">Delete</a>
+
+  <div id="modal" class="overlay">
+    <div class="modal">
+      <h2>Delete</h2>
+      <p>Are you sure you want to delete this item?!</p>
+      <a href="#" class="close-btn">Close</a>
+    </div>
+  </div>
+
+</body>
+</html>

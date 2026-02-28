@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="form-container">
+  
+    <img src="https://imgs.search.brave.com/A-Ywzj8Ummy-uUGB41bd7kuHGFYooQahE_Y7ECYJSbE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI3/NjY2MjY2MS92ZWN0/b3IvZmVlZGJhY2st/c3BlZWNoLWJ1YmJs/ZS1pY29uLXZlY3Rv/ci1kZXNpZ24uanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPV96/a0tkX0FtX2Rqc1Bt/ZkJKQzRyT2FvX3Vs/bmVjQURFazA4ZTVC/ck83WVE9" alt="Company Logo">
+
+    <h1>Feedback Form</h1>
+
+    <form aria-label="Feedback Form">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required aria-required="true">
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required aria-required="true" >
+
+      <fieldset>
+        <legend>How satisfied are you with the product?</legend>
+        <div class="radio-group">
+          <input type="radio" id="very-satisfied" name="satisfaction" value="very-satisfied">
+          <label for="very-satisfied">Very Satisfied</label>
+
+          <input type="radio" id="satisfied" name="satisfaction" value="satisfied">
+          <label for="satisfied">Satisfied</label>
+
+          <input type="radio" id="dissatisfied" name="satisfaction" value="dissatisfied">
+          <label for="dissatisfied">Notsatisfied</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>What did you like? (Select all that apply)</legend>
+        <div class="checkbox-group">
+          <input type="checkbox" id="speed" name="liked" value="Speed">
+          <label for="speed">Speed</label>
+
+          <input type="checkbox" id="support" name="liked" value="Delivary">
+          <label for="delivary">Delivary</label>
+
+          <input type="checkbox" id="quality" name="liked" value="Quality">
+          <label for="quality">Quality</label>
+
+          <input type="checkbox" id="design" name="liked" value="Design">
+          <label for="design">Design</label>
+        </div>
+      </fieldset>
+
+      <label for="comments">Additional Comments:</label>
+      <textarea id="comments" name="comments" rows="4" aria-describedby="commentsHint"></textarea>
+      <div id="commentsHint" class="hint">Share any suggestions, or issues you experienced.</div>
+
+      <button type="submit" aria-label="Submit Feedback Form">Submit Feedback</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alternate Row Styling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; 
+    }
+
+    table {
+      width: 80%;        
+      max-width: 600px;  
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    th, td {
+      padding: 1em;        
+      text-align: left;
+      font-size: 1rem;     
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #262bb6;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f0f4ff;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    tr:hover {
+      background-color: #dbe5ff;
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Pallavi</td><td>Web Developer</td><td>India</td></tr>
+      <tr><td>Pratheek</td><td>UI Designer</td><td>Canada</td></tr>
+      <tr><td>Prajna</td><td>Data Analyst</td><td>UK</td></tr>
+      <tr><td>Prathvi</td><td>Backend Engineer</td><td>USA</td></tr>
+      <tr><td>Pranav</td><td>Project Manager</td><td>Australia</td></tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

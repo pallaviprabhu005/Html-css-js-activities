@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 APIs Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #geo {
+      margin-bottom: 20px;
+    }
+    canvas {
+      border: 2px solid #444;
+      display: block;
+      margin-bottom: 10px;
+    }
+    button {
+      margin-right: 10px;
+      margin-bottom: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML5 APIs: Geolocation, Canvas, Storage</h1>
+
+  <div id="geo">
+    <button onclick="getLocation()">Get Location</button>
+    <p id="location">Location: Unknown</p>
+  </div>
+
+  <canvas id="myCanvas" width="500" height="300"></canvas>
+
+  <div>
+    <button onclick="drawRectangle()">Draw Rectangle</button>
+    <button onclick="drawCircle()">Draw Circle</button>
+    <button onclick="clearCanvas()">Clear Canvas</button>
+    <button onclick="saveDrawing()">Save Drawing</button>
+    <button onclick="loadDrawing()">Load Drawing</button>
+  </div>
+
+  <script>
+   
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          document.getElementById('location').textContent = 
+            `Location: Latitude ${position.coords.latitude.toFixed(4)}, Longitude ${position.coords.longitude.toFixed(4)}`;
+        }, function(error) {
+          document.getElementById('location').textContent = 'Error getting location.';
+        });
+      } else {
+        document.getElementById('location').textContent = 'Geolocation is not supported.';
+      }
+    }
+
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const drawings = [];
+
+    function drawRectangle() {
+      const x = Math.random() * 400;
+      const y = Math.random() * 200;
+      const width = 80;
+      const height = 50;
+      ctx.fillStyle = '#3498db';
+      ctx.fillRect(x, y, width, height);
+      drawings.push({ shape: 'rectangle', x, y, width, height, color: '#3498db' });
+    }
+
+    function drawCircle() {
+      const x = Math.random() * 400 + 50;
+      const y = Math.random() * 200 + 50;
+      const radius = 30;
+      ctx.fillStyle = '#e74c3c';
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fill();
+      drawings.push({ shape: 'circle', x, y, radius, color: '#e74c3c' });
+    }
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawings.length = 0;
+      localStorage.removeItem('myDrawing');
+    }
+
+    function saveDrawing() {
+      localStorage.setItem('myDrawing', JSON.stringify(drawings));
+      alert('Drawing saved to localStorage.');
+    }
+
+    function loadDrawing() {
+      const data = localStorage.getItem('myDrawing');
+      if (data) {
+        const savedDrawings = JSON.parse(data);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawings.length = 0;
+        savedDrawings.forEach(item => {
+          ctx.fillStyle = item.color;
+          if (item.shape === 'rectangle') {
+            ctx.fillRect(item.x, item.y, item.width, item.height);
+          } else if (item.shape === 'circle') {
+            ctx.beginPath();
+            ctx.arc(item.x, item.y, item.radius, 0, Math.PI * 2);
+            ctx.fill();
+          }
+          drawings.push(item);
+        });
+        alert('Drawing loaded from localStorage.');
+      } else {
+        alert('No saved drawing found.');
+      }
+    }
+  </script>
+
+</body>
+</html>

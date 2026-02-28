@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Survey Form</h1>
+  <p>We appreciate your participation in this program. Please take the survey & leave a remark below to help with future improvemnet.</p>
+
+  <form>
+    <label for="Name">Name:</label>
+    <input type="name" id="name" name="name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="phone">Phone:</label>
+    <input type="phone" id="phone" name="phone" required>
+
+    <label for="satisfaction">How satisfied are you with our service?</label>
+    <input type="range" id="satisfaction" name="satisfaction" min="1" max="10" step="1">
+    <div class="range-label">
+      <span>Not Satisfied</span>
+      <span>Very Satisfied</span>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

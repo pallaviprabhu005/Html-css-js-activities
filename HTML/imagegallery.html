@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    
+</head>
+<body>
+
+    <h1>Image Gallery</h1>
+
+    <div class="gallery">
+        <a href="https://hgic.clemson.edu/factsheet/jasmine/" target="_blank">
+            <img src="https://imgs.search.brave.com/hSPxH2bBULpjNKIWytBa6aGqg6dqcCxYF5pB-Rl73mM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bG9nZWVzLmNvbS9j/ZG4vc2hvcC9maWxl/cy9yMTkyNS0yLWxh/cmdlLmpwZz92PTE3/NTE5MjE1NTImd2lk/dGg9MTk0Ng" alt="Jasmine">
+        </a>
+        <a href="https://hgic.clemson.edu/factsheet/hibiscus/" target="_blank">
+            <img src="https://imgs.search.brave.com/vHfuFsWp1FrIbX7ZqmDoUg5do0u4FcpvqDBfBXMx-gQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTYx/NzE4MTEyMi9waG90/by9waW5rLWhpYmlz/Y3VzLWZsb3dlcnMu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PXFrWDBUUXB6SUxF/YXZ1WE1mQXN2ZGdN/cmpGVmQ1b0FJajYw/eEFxSHZaSlk9" alt="Hibiscus">
+        </a>
+        <a href="https://hicksnurseries.com/trees-and-shrubs/everything-you-need-to-know-about-roses/" target="_blank">
+            <img src="https://imgs.search.brave.com/7k6wphWqJBYmEMVKiBi8rhTQm1H22lA4H2tz0UrBRpU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNS8w/My8yNi8xOC8xMS9y/b3NlLTY5MzE1NV82/NDAuanBn" alt="Rose">
+        </a>
+        <a href="https://www.kew.org/plants/sunflower" target="_blank">
+            <img src="https://imgs.search.brave.com/fu5ThYBKKg3oS5Y7JH9K9jTJyMWjk4URuzaNijJWUJ0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MzUzODI5ODUyNjQt/N2VhMTMxNTM3YzA3/P2ZtPWpwZyZxPTYw/Jnc9MzAwMCZpeGxp/Yj1yYi00LjEuMCZp/eGlkPU0zd3hNakEz/ZkRCOE1IeHpaV0Z5/WTJoOE1UWjhmSE4x/Ym1ac2IzZGxjbnhs/Ym53d2ZId3dmSHg4/TUE9PQ" alt="Sunflower">
+        </a>
+    </div>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 40px;
+        }
+        .gallery a img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .gallery a img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</body>
+</html>
+ 

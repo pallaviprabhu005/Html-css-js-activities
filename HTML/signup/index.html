@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup Form</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="form-container">
+    <h2>Signup Form</h2>
+    <form action="/submit-signup" method="POST">
+      
+      
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+    
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm_password" required>
+
+      
+      <label>Gender</label>
+      <div class="gender-group">
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male" style="display: inline;">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female" style="display: inline;">Female</label>
+      </div>
+
+     
+      <label for="country">Country</label>
+      <select id="country" name="country" required>
+        <option value="">Select</option>
+        <option value="us">United States</option>
+        <option value="uk">United Kingdom</option>
+        <option value="in">India</option>
+      </select>
+
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+  
+</body>
+</html>

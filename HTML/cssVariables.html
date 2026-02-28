@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    :root {
+      --primary-color: #262bb6;
+      --secondary-color: #bed3ec;
+      --text-color: #333;
+      --card-bg: #ffffff;
+      --border-radius: 10px;
+      --padding: 20px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      color: var(--text-color);
+    }
+
+    header {
+      text-align: center;
+      padding: var(--padding);
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .portfolio {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: var(--padding);
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: var(--border-radius);
+      width: 300px;
+      padding: var(--padding);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: var(--border-radius);
+    }
+
+    .card h3 {
+      color: var(--primary-color);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 18px;
+        padding: 15px;
+      }
+
+      .portfolio {
+        flex-direction: column;  
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;           
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <p>Web Developer | Designer | Coder</p>
+  </header>
+
+  <section class="portfolio">
+    <div class="card">
+      <img src="https://imgs.search.brave.com/PPK9LsXQUUiZtlrXqfBlM6_6zFRICYjW1bnYHfBWXBs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuanVzdGlubWlu/ZC5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMTAvaGVh/ZGVyLXdlYi1hbmlt/YXRpb25zLTc2OHg0/OTIucG5n"alt="Project 1">
+      <h3>Project One</h3>
+      <p>A simple landing page built with HTML and CSS.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://imgs.search.brave.com/pKAZjj-IIlta69n4i3FKokRfOxquS46qQ0LJzmGMLKo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93ZWJz/Y2FyZS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjUvMDIv/V2h5LWlzLVJlc3Bv/bnNpdmUtV2ViLURl/c2lnbi1JbXBvcnRh/bnQucG5n" alt="Project 2">
+      <h3>Project Two</h3>
+      <p>Responsive website designed with Flexbox and Grid.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://imgs.search.brave.com/UtVRYhHJjT-TzwzLdLOkEv00xlDpDIjtTvjHJbvJB5U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuanVzdGlubWlu/ZC5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjUvMDEvdWkt/YW5pbWF0aW9uLWV4/YW1wbGVzLWJ1dHRv/bnMtdHJhbnNpdGlv/bnMucG5n" alt="Project 3">
+      <h3>Project Three</h3>
+      <p>Interactive web app with animations and transitions.</p>
+    </div>
+  </section>
+</body>
+</html>

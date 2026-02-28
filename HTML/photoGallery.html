@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery div::after {
+      bottom: 10px;
+      right: 10px;
+      font-size: 20px;
+    }
+
+    .gallery div:hover::after {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Photo Gallery</h1>
+  <div class="gallery">
+    <div><img src="https://imgs.search.brave.com/I1B0bZn5Vus4KZXr51extVE82yOE8_lILOJcZ6JsXFg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjE5/NzA0MDAwNS9waG90/by9zdW5zZXQtc2t5/LndlYnA_YT0xJmI9/MSZzPTYxMng2MTIm/dz0wJms9MjAmYz1i/cnVHYThYSTJkamRo/VjhNSmc3MVZFTEM5/c2w4cDRBRVNBZ0R2/UEt0bnIwPQ" alt="Photo 1"></div>
+    <div><img src="https://imgs.search.brave.com/EXypChpS2w1oaZIvV_nwApOdUT95GnZmCB_2pKHphdg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTUw/ODQ1MzE2My9waG90/by90d28tbW9kZXJu/LWJ1aWxkaW5ncy13/aXRoLWdsYXNzLXdp/bmRvd3MtYXJjaGl0/ZWN0dXJlLWRlc2ln/bi1vZi1idWlsZGlu/Z3Mtb2ZmaWNlLXNw/YWNlLWhvdXNlcy5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/UlNKWWF4VGhpaTVp/Sy16a182OWgxNlVW/dGh3dWZBMWdiYXhv/WkVLT1VaZz0" alt="Photo 2"></div>
+    <div><img src="https://imgs.search.brave.com/lCD7lnfJ2rjtiMs1orrxtV-9dpENVhONONTnaK6gVxI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvZm9y/ZXN0LXRyZWVzLXN1/bmxpZ2h0LWdlenhk/Ymd1MXNueWI1bWEu/anBn" alt="Photo 3"></div>
+    <div><img src="https://imgs.search.brave.com/fnChskPI3ZjC__6HDj88HEZAQmFClb7wyL_48fn5X6U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzAwLzE0/LzNmLzAwMTQzZjU2/MmUyN2Q2MjJiMWU4/MDU0NTIwOTRjYTBk/LmpwZw" alt="Photo 4"></div>
+    <div><img src="https://imgs.search.brave.com/iTLWnzO2OLpzsAV11jSScDh-fTBEnOwZ-9_nhTncVg0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAzLzkxLzI3LzA1/LzM2MF9GXzM5MTI3/MDU3NF9qZ3Bkc3dv/RFJsS3pDdVV2U3FQ/d1ZmcHM3bkMwZkNN/Ri5qcGc" alt="Photo 5"></div>
+    <div><img src="https://imgs.search.brave.com/bbh0x6OKYwImiPS8M2FUFTQYNSXKmZbrFTHwYUA0apc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy81/LzU4L0R1c2tfb25f/dGhlX1lhbmd0emVf/Uml2ZXIuanBn" alt="Photo 6"></div>
+  </div>
+</body>
+</html>
