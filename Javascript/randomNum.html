@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guessing Game</title>
+  <style>
+    body {
+      background: #f4f4f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #fff;
+      padding: 20px 24px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      width: 320px;
+      text-align: center;
+    }
+    input[type="number"] {
+      width: 70%;
+      padding: 8px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #007bff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Guess the Number</h2>
+    <p>Pick a number between <strong>1</strong> and <strong>10</strong>.</p>
+
+    <input id="guess" type="number" placeholder="Enter your guess" min="1" max="10" />
+    <div>
+      <button id="checkBtn">Check</button>
+    </div>
+
+    <p id="message" class="message"></p>
+  </div>
+
+  <script>
+    let secret = generateSecret();
+
+    console.log("DEBUG: secret number =", secret);
+
+    const guessInput = document.getElementById("guess"); //used to select html element from a webpage using its id attribute
+    const checkBtn = document.getElementById("checkBtn");
+    const message = document.getElementById("message");
+
+    checkBtn.addEventListener("click", handleCheck);
+
+    guessInput.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") handleCheck();
+    });
+
+    function generateSecret() {
+      return Math.floor(Math.random() * 10) + 1;
+    }
+
+    function handleCheck() {
+      let raw = guessInput.value;           //string(raw)=variable raw is treated as string
+      raw = String(raw).trim();           //  trim=removes whitespace characters from sting
+     
+      const userGuess = parseInt(raw, 10); //10 is radix -base 10 number
+
+      if (raw === "" || isNaN(userGuess)) {
+        message.style.color = "#b02a37";
+        message.textContent = "❗ Please enter a valid number between 1 to 10.";
+        return;
+      }
+
+      if (userGuess < 1 || userGuess > 10) {
+        message.style.color = "#b02a37";
+        message.textContent = "Number must be between 1 and 10.";
+        return;
+      }
+
+      if (userGuess === secret) {
+        message.style.color = "green";
+        message.textContent = `Correct! The number was ${secret}. You guessed it.`;
+
+      } else if (userGuess < secret) {
+        message.style.color = "#e67700";
+        message.textContent = "Too low! Try again.";
+      } else {
+        message.style.color = "#e67700";
+        message.textContent = "Too high! Try again.";
+      }
+
+      guessInput.value = "";
+      guessInput.focus(); // to set focus on html input elemnt
+    }
+
+  </script>
+</body>
+</html>
+ 
